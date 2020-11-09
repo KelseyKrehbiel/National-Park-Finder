@@ -1,3 +1,5 @@
+"use strict";
+
 const myKey = 'zURgoE4HavD2m6V0rTQlBQPLxf2dgjGFsjrvZTn2'
 
 function buildRequest(state,results){
@@ -49,6 +51,5 @@ function getParks(requestURL) {
       buildRequest(state,results);
     });
   }
-  
-  $(//wait for submission
-    watchForm());
+  //wait for submission
+  $(watchForm());
