@@ -35,7 +35,7 @@ function getParks(requestURL) {
     let parkList = ""
     for(let p = 0; p < parkData.length; p++){
         parkList += `<p class="parks"><a href="${parkData[p].url}">${parkData[p].fullName}</a></p>
-                    <p class="parks">${parkData[p].description}</p><br>`
+                    <p class="parks">${parkData[p].description}</p><br class="parks">`
     }
     $('main').append(parkList);
   }
@@ -44,8 +44,8 @@ function getParks(requestURL) {
       //console.log("submitted")
     $('form').submit(event => {
       event.preventDefault();
-      console.log($('#state-list').val());
-      console.log($('#result-size').val());
+      //console.log($('#state-list').val());
+      //console.log($('#result-size').val());
       let state = $('#state-list').val();
       let results = $('#result-size').val();
       buildRequest(state,results);
