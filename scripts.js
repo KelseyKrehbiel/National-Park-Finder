@@ -6,7 +6,12 @@ function buildRequest(state,results){
     /*
     */
     //API takes comma delimited string of states
-    requestURL += `stateCode=${state}&limit=${results}&api_key=${myKey}`;
+    //remove whitespace
+    let encodedStateList = state.replace(/\s/g, "");
+    //convert commas to %2C for URL
+    encodedStateList = encodedStateList.replace(',','%2C');
+    console.log(encodedStateList);
+    requestURL += `stateCode=${encodedStateList}&limit=${results}&api_key=${myKey}`;
 
     console.log(requestURL);
     getParks(requestURL)
@@ -45,7 +50,5 @@ function getParks(requestURL) {
     });
   }
   
-  $(function() {
-    //wait for submission
-    watchForm();
-  });
+  $(//wait for submission
+    watchForm());
